@@ -1,0 +1,15 @@
+:root {
+    /* Declaramos nuestras variables */
+    --naranja: #f90;
+    --gris-oscuro: #27262b;
+    --gris-claro: #CCC;
+    --blanco: #FFF;
+    --negro: #000;
+}
+
+
+
+body {
+    background-color: #333;
+    background-image: url(images/pattern.jpg);
+} 
