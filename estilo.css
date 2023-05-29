@@ -13,3 +13,29 @@ body {
     background-color: #333;
     background-image: url(images/pattern.jpg);
 } 
+
+.cabecera,
+.contenido {
+    max-width: 1200px;
+    /* Margen automatico me centro los elementos en la pantalla */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cabecera {
+    
+    display: flex;
+    /* Separar elementos a cada esquina */
+    justify-content: space-between;
+    /* Centrarlo verticalmente */
+    align-items: center;
+}
+
+.cabecera-title { 
+    color: var(--naranja);
+    font-size: 24px;
+}
+
+.contenido {
+    background-color: white;
+}
