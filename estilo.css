@@ -1,41 +1,168 @@
 :root {
     /* Declaramos nuestras variables */
     --naranja: #f90;
+    --amarillo: #ffff7c;
+    --verde: #8F8;
     --gris-oscuro: #27262b;
     --gris-claro: #CCC;
     --blanco: #FFF;
     --negro: #000;
 }
 
-
+/* ------------- RESET ------------- */
+/* Selector universal, selecciona toooodos los elementos del HTML
+y les aplica... lo que escribamos
+    siempre va arriba de todo (después de root, antes de body)
+*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
 
 body {
-    background-color: #333;
-    background-image: url(images/pattern.jpg);
-} 
+    /* Todo el sitio va a estar con sans-serif */
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--verde);
+}
 
 .cabecera,
 .contenido {
     max-width: 1200px;
-    /* Margen automatico me centro los elementos en la pantalla */
+    /* Márgen automático me centra los elementos en la pantalla */
     margin-left: auto;
     margin-right: auto;
 }
 
 .cabecera {
-    
     display: flex;
-    /* Separar elementos a cada esquina */
+    /* Separar los elementos, cada uno en su esquina */
     justify-content: space-between;
-    /* Centrarlo verticalmente */
+    /* Centrarlos verticalmente */
     align-items: center;
 }
-
-.cabecera-title { 
+.cabecera-title {
     color: var(--naranja);
     font-size: 24px;
 }
-
 .contenido {
-    background-color: white;
+    background-color: var(--blanco);
+}
+
+/*
+    ---------- BOTONERA -----------
+*/
+
+.nav-lista {
+    background-color: var(--naranja);
+    /* Eliminar los puntitos de la lista */
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+
+    padding: 12px;
+    padding-left: 40px;
+}
+.nav-form {
+    flex-grow: 1;
+    text-align: right;
+}
+.nav-link {
+    display: block;
+    color: var(--blanco);
+    font-weight: bold;
+    text-decoration: none;
+    border-right: 1px solid var(--amarillo);
+    /* 8 arriba y abajo / 12 a los costados */
+    padding: 2px 12px;
+}
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/*
+    ---------- IMAGEN -----------
+*/
+
+.imagen {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+
+/*
+    ---------- PRODUCTOS -----------
+*/
+.productos {
+    margin-bottom: 32px;
+    display: grid;
+    /* 330px 1fr significa una columna fija de 330px y una que se adapta al tamaño
+        1fr va a ocupar "lo que sobra" */
+    grid-template-columns: 330px 1fr;
+    gap: 20px;
+}
+.derecha {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+
+/*
+    ---------- PRODUCTO -----------
+*/
+
+.producto-title {
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+.producto-contenedor {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 20px;
+}
+.producto-contenedor p {
+    padding-top: 8px;
+    font-size: 14px;
+}
+
+/*
+    ---------- NEWSLETTER -----------
+*/
+
+.newsletter {
+    background-image: linear-gradient(
+        var(--blanco) 65%,
+        var(--gris-claro)
+    );
+    margin-bottom: 250px;
+    max-width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    border: 1px solid var(--gris-oscuro);
+    /* Redondeamos esquinas */
+    border-radius: 4px;
+    padding: 12px 32px;
+
+    display: flex;
+    /* Centramos en vertical */
+    align-items: center;
+}
+.newsletter-texto {
+    margin-left: 32px;
+}
+.newsletter-parrafo2 {
+    margin-left: 32px;
+}
+.newsletter-form {
+    flex-grow: 1;
+    text-align: right;
+}
+.newsletter-form input[type="submit"] {
+    background: none;
+    border: 0;
+    font-weight: bold;
+    /* Devolvemos "la manito" */
+    cursor: pointer;
 }
