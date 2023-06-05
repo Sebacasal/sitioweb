@@ -40,6 +40,7 @@ body {
     justify-content: space-between;
     /* Centrarlos verticalmente */
     align-items: center;
+    background-color: red;
 }
 .cabecera-title {
     color: var(--naranja);
